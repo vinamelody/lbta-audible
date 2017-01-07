@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         // need to use autolayout
         collectionView.anchorToTop(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(PageCell.self, forCellWithReuseIdentifier: cellId)
     }
 
 
