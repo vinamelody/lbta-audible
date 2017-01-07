@@ -10,12 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let collectionView: UICollectionView = {
+    lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = UIColor.purple
+        cv.dataSource = self
+        cv.delegate = self
+        cv.isPagingEnabled = true // for the snapping effect
         return cv
     }()
+    
+    let cellId = "cellId"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +32,30 @@ class ViewController: UIViewController {
         
         // need to use autolayout
         collectionView.anchorToTop(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
+        
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
     }
 
 
+}
+
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        
+        cell.backgroundColor = .white
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: view.frame.height)
+    }
 }
 
 extension UIView {
