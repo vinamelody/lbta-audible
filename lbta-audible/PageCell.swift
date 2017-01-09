@@ -19,10 +19,21 @@ class PageCell: UICollectionViewCell {
         return iv
     }()
     
+    let textView: UITextView = {
+        let tv = UITextView()
+        tv.text = "Sample text"
+        tv.isEditable = false
+        return tv
+    }()
+    
     func setupViews() {
         
         addSubview(imageView)
+        addSubview(textView
+        )
         imageView.anchorToTop(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
+        textView.anchorToTop(top: nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
+        textView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
         
     }
     
