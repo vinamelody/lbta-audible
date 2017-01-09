@@ -10,6 +10,17 @@ import UIKit
 
 class PageCell: UICollectionViewCell {
     
+    var page: Page? {
+        didSet {
+            guard let page = page else {
+                return
+            }
+            
+            imageView.image = UIImage(named: page.imageName)
+            
+        }
+    }
+    
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = UIColor.yellow
