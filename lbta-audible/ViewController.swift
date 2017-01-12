@@ -32,11 +32,23 @@ class ViewController: UIViewController {
         return [firstPage, secondPage, thirdPage]
         
     }()
+    
+    let pageControl: UIPageControl = {
+        let pc = UIPageControl()
+        pc.pageIndicatorTintColor = UIColor.lightGray
+        pc.numberOfPages = 3
+        pc.currentPageIndicatorTintColor = UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1)
+        return pc
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(collectionView)
+        view.addSubview(pageControl)
+        
+        _ = pageControl.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 40)
+        
         collectionView.frame = view.frame
         
         // need to use autolayout
