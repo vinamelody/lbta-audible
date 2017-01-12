@@ -52,15 +52,24 @@ class PageCell: UICollectionViewCell {
         return tv
     }()
     
+    let lineSeparatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        return view
+    }()
+    
     func setupViews() {
         
         addSubview(imageView)
-        addSubview(textView
-        )
-        imageView.anchorToTop(top: topAnchor, left: leftAnchor, bottom: textView.topAnchor, right: rightAnchor)
-        textView.anchorToTop(top: nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
-//        textView.anchorWithConstantsToTop(top: nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 16, bottomConstant: 0, rightConstant: 16)
+        addSubview(textView)
+        addSubview(lineSeparatorView)
+        
+        imageView.anchorToTop(topAnchor, left: leftAnchor, bottom: textView.topAnchor, right: rightAnchor)
+        textView.anchorWithConstantsToTop(nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 16, bottomConstant: 0, rightConstant: 16)
         textView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
+        
+        lineSeparatorView.anchorToTop(nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
+        lineSeparatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
     }
     
