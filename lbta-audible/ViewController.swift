@@ -33,6 +33,8 @@ class ViewController: UIViewController {
         
     }()
     
+    let orangeColor: UIColor = UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1)
+    
     let pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.pageIndicatorTintColor = UIColor.lightGray
@@ -40,14 +42,34 @@ class ViewController: UIViewController {
         pc.currentPageIndicatorTintColor = UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1)
         return pc
     }()
+    
+    let skipButton: UIButton = {
+        let button = UIButton(type: UIButtonType.system)
+        button.setTitle("Skip", for: UIControlState.normal)
+        button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: UIControlState.normal)
+        return button
+    }()
+    
+    let nextButton: UIButton = {
+        let button = UIButton(type: UIButtonType.system)
+        button.setTitle("Next", for: UIControlState.normal)
+        button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: UIControlState.normal)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(collectionView)
         view.addSubview(pageControl)
+        view.addSubview(skipButton)
+        view.addSubview(nextButton)
         
         _ = pageControl.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 40)
+        
+        _ = skipButton.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, topConstant: 16, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50)
+        
+        _ = nextButton.anchor(view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 16, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50)
         
         collectionView.frame = view.frame
         
