@@ -48,6 +48,7 @@ class PageCell: UICollectionViewCell {
         let tv = UITextView()
         tv.text = "Sample text"
         tv.isEditable = false
+        tv.contentInset = UIEdgeInsets(top: 24, left: 0, bottom: 0, right: 0)
         return tv
     }()
     
@@ -58,6 +59,7 @@ class PageCell: UICollectionViewCell {
         )
         imageView.anchorToTop(top: topAnchor, left: leftAnchor, bottom: textView.topAnchor, right: rightAnchor)
         textView.anchorToTop(top: nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
+//        textView.anchorWithConstantsToTop(top: nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 16, bottomConstant: 0, rightConstant: 16)
         textView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
         
     }
