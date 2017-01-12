@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A84779B1E27BA5400D7787B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84779A1E27BA5400D7787B /* Extensions.swift */; };
 		5A8856591E210B8A009F26A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8856581E210B8A009F26A1 /* AppDelegate.swift */; };
 		5A88565B1E210B8A009F26A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88565A1E210B8A009F26A1 /* ViewController.swift */; };
 		5A88565E1E210B8A009F26A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A88565C1E210B8A009F26A1 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A84779A1E27BA5400D7787B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5A8856551E210B8A009F26A1 /* lbta-audible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lbta-audible.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8856581E210B8A009F26A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A88565A1E210B8A009F26A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				5A8856641E210B8B009F26A1 /* Info.plist */,
 				5A88566A1E211C9C009F26A1 /* PageCell.swift */,
 				5AF428171E23D25F00C2A009 /* Page.swift */,
+				5A84779A1E27BA5400D7787B /* Extensions.swift */,
 			);
 			path = "lbta-audible";
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A84779B1E27BA5400D7787B /* Extensions.swift in Sources */,
 				5A88565B1E210B8A009F26A1 /* ViewController.swift in Sources */,
 				5A8856591E210B8A009F26A1 /* AppDelegate.swift in Sources */,
 				5AF428181E23D25F00C2A009 /* Page.swift in Sources */,
