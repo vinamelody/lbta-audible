@@ -42,6 +42,14 @@ extension UIView {
             anchors.append(rightAnchor.constraint(equalTo: right, constant: -rightConstant))
         }
         
+        if widthConstant > 0 {
+            anchors.append(widthAnchor.constraint(equalToConstant: widthConstant))
+        }
+        
+        if heightConstant > 0 {
+            anchors.append(heightAnchor.constraint(equalToConstant: heightConstant))
+        }
+        
         anchors.forEach({$0.isActive = true})
         
         return anchors
