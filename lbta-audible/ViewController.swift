@@ -58,6 +58,8 @@ class ViewController: UIViewController {
         button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: UIControlState.normal)
         return button
     }()
+    
+    var pageControlBottomAnchor: NSLayoutConstraint?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +69,9 @@ class ViewController: UIViewController {
         view.addSubview(skipButton)
         view.addSubview(nextButton)
         
-        _ = pageControl.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 40)
+        // the array index 1 here is because [0] for left, [1] for bottom, [2] right
+        
+        pageControlBottomAnchor = pageControl.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 40)[1]
         
         _ = skipButton.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, topConstant: 16, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50)
         
@@ -94,6 +98,18 @@ class ViewController: UIViewController {
         
         let pageNumber = Int(targetContentOffset.pointee.x / view.frame.width)
         pageControl.currentPage = pageNumber
+        
+        // do this on the last page
+        if pageNumber == pages.count {
+            pageControlBottomAnchor?.constant = 40
+        } else {
+            pageControlBottomAnchor?.constant = 0
+        }
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+            // Call this whenever I'm changing an anchor's constant
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
 
 
