@@ -86,6 +86,15 @@ class ViewController: UIViewController {
         collectionView.register(PageCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: loginCellId)
     }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        // to figure out which page number we are on
+        print(targetContentOffset.pointee.x)
+        
+        
+        let pageNumber = Int(targetContentOffset.pointee.x / view.frame.width)
+        pageControl.currentPage = pageNumber
+    }
 
 
 }
