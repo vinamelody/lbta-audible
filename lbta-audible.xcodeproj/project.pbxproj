@@ -14,6 +14,7 @@
 		5A8856601E210B8B009F26A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A88565F1E210B8B009F26A1 /* Assets.xcassets */; };
 		5A8856631E210B8B009F26A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A8856611E210B8B009F26A1 /* LaunchScreen.storyboard */; };
 		5A88566B1E211C9C009F26A1 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88566A1E211C9C009F26A1 /* PageCell.swift */; };
+		5ACA15C71E2FB39B00DB7D9C /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA15C61E2FB39B00DB7D9C /* LoginCell.swift */; };
 		5AF428181E23D25F00C2A009 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF428171E23D25F00C2A009 /* Page.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		5A8856621E210B8B009F26A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A8856641E210B8B009F26A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A88566A1E211C9C009F26A1 /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		5ACA15C61E2FB39B00DB7D9C /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 		5AF428171E23D25F00C2A009 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 				5A88566A1E211C9C009F26A1 /* PageCell.swift */,
 				5AF428171E23D25F00C2A009 /* Page.swift */,
 				5A84779A1E27BA5400D7787B /* Extensions.swift */,
+				5ACA15C61E2FB39B00DB7D9C /* LoginCell.swift */,
 			);
 			path = "lbta-audible";
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				5A8856591E210B8A009F26A1 /* AppDelegate.swift in Sources */,
 				5AF428181E23D25F00C2A009 /* Page.swift in Sources */,
 				5A88566B1E211C9C009F26A1 /* PageCell.swift in Sources */,
+				5ACA15C71E2FB39B00DB7D9C /* LoginCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
