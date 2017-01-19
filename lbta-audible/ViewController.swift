@@ -45,12 +45,18 @@ class ViewController: UIViewController {
         return pc
     }()
     
-    let skipButton: UIButton = {
+    lazy var skipButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
         button.setTitle("Skip", for: UIControlState.normal)
         button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: UIControlState.normal)
+        button.addTarget(self, action: #selector(skip), for: UIControlEvents.touchUpInside)
         return button
     }()
+    
+    func skip() {
+        pageControl.currentPage = pages.count - 1
+        nextPage()
+    }
     
     lazy var nextButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
