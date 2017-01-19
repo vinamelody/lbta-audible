@@ -52,12 +52,19 @@ class ViewController: UIViewController {
         return button
     }()
     
-    let nextButton: UIButton = {
+    lazy var nextButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
         button.setTitle("Next", for: UIControlState.normal)
         button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: UIControlState.normal)
+        button.addTarget(self, action: #selector(nextPage), for: UIControlEvents.touchUpInside)
         return button
     }()
+    
+    func nextPage() {
+        let indexPath = IndexPath(item: pageControl.currentPage + 1, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+        pageControl.currentPage += 1
+    }
     
     var pageControlBottomAnchor: NSLayoutConstraint?
     var skipButtonTopAnchor: NSLayoutConstraint?
