@@ -64,6 +64,18 @@ class ViewController: UIViewController {
         if pageControl.currentPage == pages.count {
             return
         }
+        
+        if pageControl.currentPage == pages.count - 1 {
+            pageControlBottomAnchor?.constant = 40
+            skipButtonTopAnchor?.constant = -40
+            nextButtonTopAnchor?.constant = -40
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                // Call this whenever I'm changing an anchor's constant
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+
+        }
         let indexPath = IndexPath(item: pageControl.currentPage + 1, section: 0)
         collectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
         pageControl.currentPage += 1
