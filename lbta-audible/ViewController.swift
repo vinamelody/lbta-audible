@@ -66,9 +66,7 @@ class ViewController: UIViewController {
         }
         
         if pageControl.currentPage == pages.count - 1 {
-            pageControlBottomAnchor?.constant = 40
-            skipButtonTopAnchor?.constant = -40
-            nextButtonTopAnchor?.constant = -40
+            moveControlConstraintOffScreen()
             
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 // Call this whenever I'm changing an anchor's constant
@@ -149,9 +147,7 @@ class ViewController: UIViewController {
         
         // do this on the last page
         if pageNumber == pages.count {
-            pageControlBottomAnchor?.constant = 40
-            skipButtonTopAnchor?.constant = -40
-            nextButtonTopAnchor?.constant = -40
+            moveControlConstraintOffScreen()
         } else {
             pageControlBottomAnchor?.constant = 0
             // unlike to 0, this is returning this constant to the original value
@@ -164,6 +160,12 @@ class ViewController: UIViewController {
             self.view.layoutIfNeeded()
         }, completion: nil)
         
+    }
+    
+    fileprivate func moveControlConstraintOffScreen() {
+        pageControlBottomAnchor?.constant = 40
+        skipButtonTopAnchor?.constant = -40
+        nextButtonTopAnchor?.constant = -40
     }
 
 
