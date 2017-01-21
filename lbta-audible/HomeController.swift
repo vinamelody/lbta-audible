@@ -23,8 +23,7 @@ class HomeController: UIViewController {
     }
     
     func handleSignOut() {
-        UserDefaults.standard.set(false, forKey: "isLoggedIn")
-        UserDefaults.standard.synchronize()
+        UserDefaults.standard.setIsLoggedIn(value: false)
         
         // Note: sometimes, the simulator doesn't exactly save the value properly. Becareful with that. In the actual device though it's working
         
