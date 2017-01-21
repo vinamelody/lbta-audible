@@ -43,7 +43,7 @@ class LoginCell: UICollectionViewCell {
         return button
     }()
     
-    var delegate: LoginControllerDelegate?
+    weak var delegate: LoginControllerDelegate?
     
     func handleLogin() {
         

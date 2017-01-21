@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol LoginControllerDelegate {
+protocol LoginControllerDelegate: class {
     func finishLoggingIn()
 }
 
