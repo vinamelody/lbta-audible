@@ -8,6 +8,17 @@
 
 import UIKit
 
+protocol LoginControllerDelegate {
+    func finishLoggingIn()
+}
+
+extension LoginController: LoginControllerDelegate {
+    
+    func finishLoggingIn() {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 class LoginController: UIViewController {
     
     lazy var collectionView: UICollectionView = {
@@ -189,10 +200,6 @@ class LoginController: UIViewController {
             self.collectionView.reloadData()
         }
     }
-    
-    func finishLoggingIn() {
-        dismiss(animated: true, completion: nil)
-    }
 
 }
 
@@ -207,7 +214,7 @@ extension LoginController: UICollectionViewDataSource, UICollectionViewDelegate,
         // we're on the last login cell`
         if indexPath.item == pages.count {
             let loginCell = collectionView.dequeueReusableCell(withReuseIdentifier: loginCellId, for: indexPath) as! LoginCell
-            loginCell.loginController = self
+            loginCell.delegate = self
             return loginCell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PageCell
