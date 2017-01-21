@@ -173,7 +173,19 @@ class ViewController: UIViewController {
         skipButtonTopAnchor?.constant = -40
         nextButtonTopAnchor?.constant = -40
     }
-
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        print(UIDevice.current.orientation.isLandscape)
+        
+        // need to relayout entire collectionview
+        collectionView.collectionViewLayout.invalidateLayout()
+        
+        let indexPath = IndexPath(item: pageControl.currentPage, section: 0)
+        // scroll to indexPath after the rotation is going
+        DispatchQueue.main.async {
+            self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
+    }
 
 }
 
