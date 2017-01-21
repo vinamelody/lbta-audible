@@ -15,6 +15,12 @@ protocol LoginControllerDelegate: class {
 extension LoginController: LoginControllerDelegate {
     
     func finishLoggingIn() {
+        
+        let rootViewController = UIApplication.shared.keyWindow?.rootViewController
+        
+        guard let mainNavigationController = rootViewController as? MainNavigationController else { return }
+        
+        mainNavigationController.viewControllers = [HomeController()]
         dismiss(animated: true, completion: nil)
     }
 }
