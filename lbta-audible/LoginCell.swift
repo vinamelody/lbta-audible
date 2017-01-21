@@ -34,16 +34,25 @@ class LoginCell: UICollectionViewCell {
         return tf
     }()
     
-    let loginButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
         button.backgroundColor = UIColor.orange
         button.setTitle("Log in", for: UIControlState.normal)
         button.setTitleColor(UIColor.white, for: .normal)
+        button.addTarget(self, action: #selector(handleLogin), for: UIControlEvents.touchUpInside)
         return button
     }()
     
+    var loginController: LoginController?
+    
+    func handleLogin() {
+        loginController?.finishLoggingIn()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        backgroundColor = UIColor.white
         
         addSubview(logoImageView)
         addSubview(emailTextField)

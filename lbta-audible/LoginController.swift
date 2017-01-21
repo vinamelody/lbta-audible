@@ -189,6 +189,10 @@ class LoginController: UIViewController {
             self.collectionView.reloadData()
         }
     }
+    
+    func finishLoggingIn() {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
 
@@ -200,8 +204,10 @@ extension LoginController: UICollectionViewDataSource, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        // we're on the last login cell`
         if indexPath.item == pages.count {
-            let loginCell = collectionView.dequeueReusableCell(withReuseIdentifier: loginCellId, for: indexPath)
+            let loginCell = collectionView.dequeueReusableCell(withReuseIdentifier: loginCellId, for: indexPath) as! LoginCell
+            loginCell.loginController = self
             return loginCell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PageCell
