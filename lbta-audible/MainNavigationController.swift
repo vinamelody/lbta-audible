@@ -15,10 +15,12 @@ class MainNavigationController: UINavigationController {
         
         view.backgroundColor = UIColor.purple
         
-        let isLoggedIn = false
+        let isLoggedIn = true
         
         if isLoggedIn {
             // assume user is logged in
+            let homeController = HomeController()
+            viewControllers = [homeController]
         } else {
             perform(#selector(showLoginController), with: nil, afterDelay: 0.01)
         }
@@ -29,5 +31,14 @@ class MainNavigationController: UINavigationController {
         present(loginController, animated: true, completion: {
             
         })
+    }
+}
+
+class HomeController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.orange
     }
 }
