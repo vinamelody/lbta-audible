@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A111DA61E3354E200C61D95 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A111DA51E3354E200C61D95 /* MainNavigationController.swift */; };
+		5A111DA81E33AFA900C61D95 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A111DA71E33AFA900C61D95 /* HomeController.swift */; };
 		5A84779B1E27BA5400D7787B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84779A1E27BA5400D7787B /* Extensions.swift */; };
 		5A8856591E210B8A009F26A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8856581E210B8A009F26A1 /* AppDelegate.swift */; };
 		5A88565B1E210B8A009F26A1 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88565A1E210B8A009F26A1 /* LoginController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		5A111DA51E3354E200C61D95 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		5A111DA71E33AFA900C61D95 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		5A84779A1E27BA5400D7787B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5A8856551E210B8A009F26A1 /* lbta-audible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lbta-audible.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8856581E210B8A009F26A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				5A84779A1E27BA5400D7787B /* Extensions.swift */,
 				5ACA15C61E2FB39B00DB7D9C /* LoginCell.swift */,
 				5A111DA51E3354E200C61D95 /* MainNavigationController.swift */,
+				5A111DA71E33AFA900C61D95 /* HomeController.swift */,
 			);
 			path = "lbta-audible";
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				5A88565B1E210B8A009F26A1 /* LoginController.swift in Sources */,
 				5A8856591E210B8A009F26A1 /* AppDelegate.swift in Sources */,
 				5AF428181E23D25F00C2A009 /* Page.swift in Sources */,
+				5A111DA81E33AFA900C61D95 /* HomeController.swift in Sources */,
 				5A111DA61E3354E200C61D95 /* MainNavigationController.swift in Sources */,
 				5A88566B1E211C9C009F26A1 /* PageCell.swift in Sources */,
 				5ACA15C71E2FB39B00DB7D9C /* LoginCell.swift in Sources */,
