@@ -184,6 +184,7 @@ class ViewController: UIViewController {
         // scroll to indexPath after the rotation is going
         DispatchQueue.main.async {
             self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            self.collectionView.reloadData()
         }
     }
 
