@@ -21,6 +21,10 @@ extension LoginController: LoginControllerDelegate {
         guard let mainNavigationController = rootViewController as? MainNavigationController else { return }
         
         mainNavigationController.viewControllers = [HomeController()]
+        
+        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+        UserDefaults.standard.synchronize()
+        
         dismiss(animated: true, completion: nil)
     }
 }
